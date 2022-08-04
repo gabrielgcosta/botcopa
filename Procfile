@@ -1,2 +1,2 @@
 worker: botcopa.py
-web: python botcopa.py
+web: python botcopa.py -p $PORT
