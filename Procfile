@@ -1,2 +1,2 @@
 worker: botcopa.py
-web: bundle exec rails server -p $PORT
+web: python botcopa.py
