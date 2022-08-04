@@ -22,7 +22,7 @@ def numOfDays(date1, date2):
 dic = {'Aug' : 8, 'Sep' : 9, 'Oct' : 10, 'Nov' : 11, 'Dec' : 12}
 
 def main():
-    i = 1
+    i = 2
     time.sleep(60)
     while True:
         auxHour = time.asctime()
