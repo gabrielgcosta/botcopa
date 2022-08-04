@@ -29,9 +29,9 @@ def main():
         date1 = date(2022, int(dic[month]), int(day))
         date2 = date(2022, 11, 21)
         if numOfDays(date1, date2) > 1:
-            tweet = 'Faltam '+str(numOfDays(date1, date2))+' dias para o começo da copa!'
+            tweet = 'Faltam '+str(numOfDays(date1, date2))+' dias para a copa do mundo!'
         elif numOfDays(date1, date2) == 1:
-            tweet = 'Faltam '+str(numOfDays(date1, date2))+' dia para o começo da copa!'
+            tweet = 'Faltam '+str(numOfDays(date1, date2))+' dia para a copa do mundo!'
         elif numOfDays(date1, date2) == 0:
             tweet = 'A copa começou!'
             client.create_tweet(text = tweet)
