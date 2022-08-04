@@ -20,26 +20,24 @@ def numOfDays(date1, date2):
     return (date2-date1).days
 
 dic = {'Aug' : 8, 'Sep' : 9, 'Oct' : 10, 'Nov' : 11, 'Dec' : 12}
-i=0
-rodou = False
-while True:
-    auxHour = time.asctime()
-    hour = auxHour[len(auxHour)-13:len(auxHour)-8]
-    if str(hour) == '08:00' or rodou == True:
-        rodou = True
+
+def main():
+    while True:
+        auxHour = time.asctime()
         month = auxHour[4:7]
         day = auxHour[9:10]
-        arquivo = open("tweets.txt", "a")
         date1 = date(2022, int(dic[month]), int(day))
         date2 = date(2022, 11, 21)
         if numOfDays(date1, date2) > 1:
-            tweet = 'Faltam '+str(numOfDays(date1, date2))+' dias para a copa!'
+            tweet = 'Faltam '+str(numOfDays(date1, date2))+' dias para o começo da copa!'
         elif numOfDays(date1, date2) == 1:
-            tweet = 'Faltam '+str(numOfDays(date1, date2))+' dia para a copa!'
+            tweet = 'Faltam '+str(numOfDays(date1, date2))+' dia para o começo da copa!'
         elif numOfDays(date1, date2) == 0:
             tweet = 'A copa começou!'
             client.create_tweet(text = tweet)
             quit()
         client.create_tweet(text = tweet)
-        print(tweet)
         time.sleep(86400)
+
+if __name__== "__main__" :
+    main()
