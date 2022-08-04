@@ -22,6 +22,7 @@ def numOfDays(date1, date2):
 dic = {'Aug' : 8, 'Sep' : 9, 'Oct' : 10, 'Nov' : 11, 'Dec' : 12}
 
 def main():
+    i = 1
     while True:
         auxHour = time.asctime()
         month = auxHour[4:7]
@@ -29,7 +30,7 @@ def main():
         date1 = date(2022, int(dic[month]), int(day))
         date2 = date(2022, 11, 21)
         if numOfDays(date1, date2) > 1:
-            tweet = 'Faltam '+str(numOfDays(date1, date2))+' dias para a copa do mundo!'
+            tweet = 'Faltam '+str(numOfDays(date1, date2))+' dias para a copa do mundo!' + i
         elif numOfDays(date1, date2) == 1:
             tweet = 'Faltam '+str(numOfDays(date1, date2))+' dia para a copa do mundo!'
         elif numOfDays(date1, date2) == 0:
@@ -38,6 +39,7 @@ def main():
             quit()
         client.create_tweet(text = tweet)
         time.sleep(86400)
+        i+=1
 
 if __name__== "__main__" :
     main()
